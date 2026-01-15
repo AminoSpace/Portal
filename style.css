@@ -518,31 +518,6 @@ body{
 
 /* Примечание: адаптив добавим позже (media queries). */
 
-@media (max-width: 768px) {
-
-  .container {
-    width: 100%;
-  }
-
-  .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
-  }
-
-  .hero__title {
-    font-size: 36px;
-  }
-
-  .grid--4,
-  .grid--3 {
-    grid-template-columns: 1fr;
-  }
-
-  .nav {
-    display: none; /* позже сделаем бургер */
-  }
-}
 
 @media (max-width: 1024px) {
 
