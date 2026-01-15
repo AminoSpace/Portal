@@ -536,6 +536,10 @@ body{
 
 @media (max-width: 768px) {
 
+  body {
+    zoom: 1.05px;
+  }
+
   /* Заголовок */
   h1 {
     font-size: 32px;
