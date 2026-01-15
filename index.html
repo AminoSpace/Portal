@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="AminoSpace" content="width=device-width, initial-scale=1.0">
+  <title>Aminospace Projects</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Aminospace Projects">
+        <img class="brand__logo" src="./assets/logo.png" alt="Aminospace logo" />
+        <span class="brand__name">Aminospace</span>
+      </a>
+
+      <nav class="nav" aria-label="Главная навигация">
+        <a class="nav__link" href="index.html">Главное</a>
+        <a class="nav__link" href="projects.html">Projects</a>
+        <a class="nav__link" href="potfolio.html">Portfolio</a>
+        <a class="nav__link" href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">Aminospace Projects</h1>
+          <p class="hero__subtitle">
+            Инженерные проекты: электроника, автоматизация, embedded-разработка.
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="projects.html">Открыть проекты</a>
+            <a class="btn btn--ghost" href="portfolio.html">Смотреть портфолио</a>
+          </div>
+
+          <div class="hero__badges">
+           
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <!-- Заглушка под схему/рендер -->
+          <img src="./assets/hero.png" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Directions -->
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Направления</h2>
+          <p class="section__desc">Чем я занимаюсь и что развиваю.</p>
+        </div>
+
+        <div class="grid grid--4">
+          <article class="card">
+            <div class="card__icon">⚙️</div>
+            <h3 class="card__title">Электроника и Устройства</h3>
+            <p class="card__text">Датчики, MCU, схемы, сборка устройств.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">🏠</div>
+            <h3 class="card__title">Aвтоматизация</h3>
+            <p class="card__text">Логика управления, реле, режимы, безопасность.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">💻</div>
+            <h3 class="card__title">Программные решения</h3>
+            <p class="card__text">Алгоритмы, UI, инструменты для проектов.</p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon">🧩</div>
+            <h3 class="card__title">Эксперименты</h3>
+            <p class="card__text">Прототипы, тесты, улучшения, планы.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Текущие проекты</h2>
+          <p class="section__desc">Ключевые проекты на стадии разработки и дальнейшего развития.</p>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="project">
+            <div class="project__top">
+              <span class="tag tag--active">Active</span>
+              <span class="tag">Smart Systems</span>
+            </div>
+            <h3 class="project__title">Smart Home Control Box</h3>
+            <p class="project__text">
+              Автономный контроллер освещения: ИК-пульт, хлопок, LDR, приоритеты.
+            </p>
+            <div class="project__actions">
+              <a class="btn btn--small btn--primary" href="#"
+                 title="Позже привяжем к странице проекта">Details</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__top">
+              <span class="tag">Concept</span>
+              <span class="tag">Hardware</span>
+            </div>
+            <h3 class="project__title">Wireless Smart-Home Control</h3>
+            <p class="project__text">]
+              Управление освещением или электричесвтом с помощью приложения.
+            </p>
+            <div class="project__actions">
+              <a class="btn btn--small btn--primary" href="#">Details</a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project__top">
+              <span class="tag">Lab</span>
+              <span class="tag">Experiments</span>
+            </div>
+            <h3 class="project__title">Experiments</h3>
+            <p class="project__text">
+              Маленькие тесты: датчики, фильтрация сигналов, логика.
+            </p>
+            <div class="project__actions">
+              <a class="btn btn--small btn--primary" href="#">Details</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Preview -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Portfolio</h2>
+          <p class="section__desc">Фото, схемы, рендеры и результаты сборок.</p>
+        </div>
+
+        <div class="strip">
+          <div class="thumb">IMG 1</div>
+          <div class="thumb">IMG 2</div>
+          <div class="thumb">IMG 3</div>
+          <div class="thumb">IMG 4</div>
+          <div class="thumb">IMG 5</div>
+          <div class="thumb">IMG 6</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section" id="about">
+      <div class="container about">
+        <div class="about__avatar">
+          <img src="./assets/My-Logo.png" alt="" />
+        </div>
+
+        <div class="about__text">
+          <h2 class="section__title">About</h2>
+          <p class="section__desc">
+            Здесь коротко обо мне: интересы, навыки, подход к проектам и цели.
+          </p>
+          <a class="btn btn--primary" href="about.html">
+            Подробнее
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <img class="footer__logo" src="./assets/logo.png" alt="" aria-hidden="true" />
+        <span>© <span id="year"></span> Aminospace Projects</span>
+      </div>
+      <div class="footer__right">
+        <span class="muted">Abdulhadiy's site</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  
+  <script>
+  const gear = document.querySelector('.brand__logo');
+if (gear) {
+  let lastScrollY = window.scrollY;
+  let rotation = 100;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+    rotation += delta * 0.10;
+    gear.style.transform = `rotate(${rotation}deg)`;
+    lastScrollY = currentScrollY;
+  });
+}
+
+
+</script>
+
+</body>
+</html>
