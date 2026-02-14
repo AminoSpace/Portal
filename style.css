@@ -179,6 +179,18 @@ body{
   justify-content:center;
 }
 
+.hero-Smart-Home__visual {
+  height: 400px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(16,24,38,.85), rgba(15,23,36,.55));
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
 .section{
   padding: 56px 0;
 }
@@ -349,12 +361,12 @@ body{
   display:flex;
   gap: 16px;
   overflow-x: auto;
-  padding: 8px 2px;
+  padding: 10px 2px;
 }
 
 .thumb{
-  min-width: 200px;
-  height: 150px;
+  min-width: 1050px;
+  height: 800px;
   border-radius: 16px;
   border: 1px solid var(--border);
   background: rgba(255,255,255,.03);
@@ -527,30 +539,16 @@ body{
   backdrop-filter: blur(6px);
 }
 
-
-/* Примечание: адаптив добавим позже (media queries). */
-
-
-@media (max-width: 1024px) {
-
-  .hero__inner {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .grid--4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid--3 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
 
   body {
     zoom: 1.05px;
   }
+
+    .hero__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
 
   /* Заголовок */
   h1 {
@@ -581,4 +579,152 @@ body{
     padding: 16px;
   }
 
+}
+
+/* ===== Header base ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+}
+
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:64px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
+
+.brand__logo{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+}
+
+/* ===== Desktop nav ===== */
+.nav{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.nav__link{
+  text-decoration:none;
+  white-space:nowrap;
+}
+
+/* ===== Burger button ===== */
+.nav-toggle{
+  display:none;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(0,255,209,0.18);
+  background: rgba(0,255,209,0.06);
+  border-radius:12px;
+  padding:10px;
+  cursor:pointer;
+}
+
+.nav-toggle span{
+  display:block;
+  height:2px;
+  margin:6px 0;
+  background: rgba(255,255,255,0.92);
+  border-radius:2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* overlay */
+.nav-overlay{
+  position:fixed;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+  z-index:40;
+}
+
+/* ===== Mobile layout ===== */
+@media (max-width: 900px){
+  .nav-toggle{ display:inline-block; }
+
+  .nav{
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    z-index: 60;
+
+    display: grid;
+    gap: 10px;
+
+    padding: 14px;
+    border-radius: 18px;
+    background: rgba(10, 16, 18, 0.92);
+    border: 1px solid rgba(0,255,209,0.18);
+    backdrop-filter: blur(12px);
+
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+
+  .nav.is-open{
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav__link{
+    padding: 12px 12px;
+    border-radius: 12px;
+    background: rgba(0,255,209,0.06);
+    border: 1px solid rgba(0,255,209,0.12);
+  }
+
+  /* Hero: не мини-десктоп, а нормальная колонка */
+  .hero__inner{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .hero__title{
+    font-size: clamp(32px, 7vw, 44px);
+    line-height: 1.05;
+  }
+
+  .hero__subtitle{
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .hero__visual img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius: 18px;
+  }
+
+  /* grids: 4 -> 2 -> 1 */
+  .grid--4{ grid-template-columns: 1fr 1fr; }
+  .grid--3{ grid-template-columns: 1fr; }
+
+  /* контейнер: комфортные поля */
+  .container{
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 520px){
+  .grid--4{ grid-template-columns: 1fr; }
 }

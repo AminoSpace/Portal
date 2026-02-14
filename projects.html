@@ -9,20 +9,27 @@
 <body>
 
     <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Aminospace Projects">
-        <img class="brand__logo" src="./assets/logo.png" alt="Aminospace logo" />
-        <span class="brand__name">Aminospace</span>
-      </a>
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Aminospace Projects">
+      <img class="brand__logo" src="./assets/logo.png" alt="Aminospace logo" />
+      <span class="brand__name">Aminospace</span>
+    </a>
 
-      <nav class="nav" aria-label="Главная навигация">
-        <a class="nav__link" href="index.html">Главная</a>
-        <a class="nav__link" href="projects.html">Проекты</a>
-        <a class="nav__link" href="potfolio.html">Портфолио</a>
-        <a class="nav__link" href="about.html">Об Авторе</a>
-      </nav>
-    </div>
-  </header>
+    <button class="nav-toggle" type="button"
+      aria-label="Открыть меню"
+      aria-controls="site-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Главная навигация">
+      <a class="nav__link" href="index.html">Главная</a>
+      <a class="nav__link" href="projects.html">Проекты</a>
+      <a class="nav__link" href="portfolio.html">Портфолио</a>
+      <a class="nav__link" href="about.html">Об авторе</a>
+    </nav>
+  </div>
+</header>
 
   <main id="top">
     <!-- Hero -->
@@ -35,7 +42,7 @@
           </p>
 
           <div class="hero__actions">
-            <a class="btn btn--primary" href="projects.html">Подробнее</a>
+            <a class="btn btn--primary" href="Smart-Home.html">Подробнее</a>
           </div>
 
           <div class="hero__badges">
@@ -71,7 +78,42 @@
         </div>
       </div>
     </section>
+<script>
+  const gear = document.querySelector('.brand__logo');
+if (gear) {
+  let lastScrollY = window.scrollY;
+  let rotation = 100;
 
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+    const delta = currentScrollY - lastScrollY;
+    rotation += delta * 0.10;
+    gear.style.transform = `rotate(${rotation}deg)`;
+    lastScrollY = currentScrollY;
+  });
+}
+</script>
+
+<script>
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  const overlay = document.querySelector('.nav-overlay');
+
+  function setOpen(state){
+    nav.classList.toggle('is-open', state);
+    btn.setAttribute('aria-expanded', state ? 'true' : 'false');
+    overlay.hidden = !state;
+    document.body.style.overflow = state ? 'hidden' : '';
+  }
+
+  if (btn && nav && overlay){
+    btn.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
+    overlay.addEventListener('click', () => setOpen(false));
+    nav.addEventListener('click', (e) => {
+      if (e.target.classList.contains('nav__link')) setOpen(false);
+    });
+  }
+</script>
     
 </body>
 </html>

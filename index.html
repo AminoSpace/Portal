@@ -8,21 +8,28 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="brand" href="#top" aria-label="Aminospace Projects">
-        <img class="brand__logo" src="./assets/logo.png" alt="Aminospace logo" />
-        <span class="brand__name">Aminospace</span>
-      </a>
+ <header class="header">
+  <div class="container header__inner">
+    <a class="brand" href="index.html" aria-label="Aminospace Projects">
+      <img class="brand__logo" src="./assets/logo.png" alt="Aminospace logo" />
+      <span class="brand__name">Aminospace</span>
+    </a>
 
-      <nav class="nav" aria-label="Главная навигация">
-        <a class="nav__link" href="index.html">Главная</a>
-        <a class="nav__link" href="projects.html">Проекты</a>
-        <a class="nav__link" href="potfolio.html">Портфолио</a>
-        <a class="nav__link" href="about.html">Об Авторе</a>
-      </nav>
-    </div>
-  </header>
+    <button class="nav-toggle" type="button"
+      aria-label="Открыть меню"
+      aria-controls="site-nav"
+      aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="site-nav" aria-label="Главная навигация">
+      <a class="nav__link" href="index.html">Главная</a>
+      <a class="nav__link" href="projects.html">Проекты</a>
+      <a class="nav__link" href="portfolio.html">Портфолио</a>
+      <a class="nav__link" href="about.html">Об авторе</a>
+    </nav>
+  </div>
+</header>
 
   <main id="top">
     <!-- Hero -->
@@ -118,7 +125,7 @@
               <span class="tag">Hardware</span>
             </div>
             <h3 class="project__title">Wireless Smart-Home Control</h3>
-            <p class="project__text">]
+            <p class="project__text">
               Управление освещением или электричесвтом с помощью приложения.
             </p>
             <div class="project__actions">
@@ -152,12 +159,10 @@
         </div>
 
         <div class="strip">
-          <div class="thumb">IMG 1</div>
-          <div class="thumb">IMG 2</div>
-          <div class="thumb">IMG 3</div>
-          <div class="thumb">IMG 4</div>
-          <div class="thumb">IMG 5</div>
-          <div class="thumb">IMG 6</div>
+          <div class="thumb"><img src="./assets/Smart-Home-Project-111.png" alt="" /></div>
+          <div class="thumb"><img src="./assets/Smart-Home-Project-122.png" alt="" /></div>
+          <div class="thumb"><img src="./assets/Smart-Home-Project-133.png" alt="" /></div>
+          <div class="thumb"><img src="./assets/Smart-Home-Project-144.png" alt="" /></div>
         </div>
       </div>
     </section>
@@ -186,7 +191,7 @@
     <div class="container footer__inner">
       <div class="footer__left">
         <img class="footer__logo" src="./assets/logo.png" alt="" aria-hidden="true" />
-        <span>© <span id="year"></span> Aminospace Projects</span>
+        <span>© <span id="year"></span>Aminospace Projects</span>
       </div>
       <div class="footer__right">
         <span class="muted">Abdulhadiy's site</span>
@@ -212,8 +217,27 @@ if (gear) {
     lastScrollY = currentScrollY;
   });
 }
+</script>
 
+<script>
+  const btn = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav');
+  const overlay = document.querySelector('.nav-overlay');
 
+  function setOpen(state){
+    nav.classList.toggle('is-open', state);
+    btn.setAttribute('aria-expanded', state ? 'true' : 'false');
+    overlay.hidden = !state;
+    document.body.style.overflow = state ? 'hidden' : '';
+  }
+
+  if (btn && nav && overlay){
+    btn.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
+    overlay.addEventListener('click', () => setOpen(false));
+    nav.addEventListener('click', (e) => {
+      if (e.target.classList.contains('nav__link')) setOpen(false);
+    });
+  }
 </script>
 
 </body>
